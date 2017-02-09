@@ -6,7 +6,7 @@ set -e
 AWS_PROFILE=''
 
 # find all buckets in the account.
-S3_BUCKET_IDS=$(aws s3api list-buckets --profile onzo --query 'Buckets[*].Name' --output text)
+S3_BUCKET_IDS=$(aws s3api list-buckets --profile $AWS_PROFILE --query 'Buckets[*].Name' --output text)
 
 for i in ${S3_BUCKET_IDS[@]}
 do
