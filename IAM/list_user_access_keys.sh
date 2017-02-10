@@ -6,7 +6,7 @@ set -e
 
 AWS_PROFILE=''
 
-echo "Outputting list of IAM users:"
+echo "Here is a list of IAM users on the account:"
 
 for user in $(aws iam list-users | jq -r '.Users[] | .UserName') ;
 do
