@@ -2,10 +2,12 @@
 
 set -e
 
+# Script lists the users that have and have not enabled multi factor authentication on their account in AWS.
+
 usage() {
   echo "Usage: $0 <aws config profile>"
   echo " e.g.: $0 aws_production"
-  echo "Make sure you have your AWS CLI configured"
+  echo "Make sure your AWS CLI is configured"
   echo " "
   exit 1
 }
