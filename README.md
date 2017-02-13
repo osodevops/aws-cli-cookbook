@@ -24,7 +24,21 @@ Once you have installed the AWS CLI make sure to configure it before you get sta
 
 Simply type `$ aws configure` and fill in the prompts and you are good to go! 
 
-### Example
+### How to use
+
+Once you have downloaded the scripts and setup your AWS CLI we can start using the scripts in this repo.
+Before we start make sure that you have set the correct access on the scripts.
+So go ahead now and chmod the script like so:
+
+`$ chmod 755 example_script.sh `
+
+Then execute the script:
+
+`$ sh example_script.sh aws_config_name`
+
+In all our scripts we help the user to set their aws config that they would like to use, as some users might have multiple AWS accounts that they would like to query. Just remember to setup your aliases in ~/.aws/credentials and ~/.aws/config
+
+### Example CLI command
 
 `$ aws iam list-users --output table`
 
