@@ -22,4 +22,4 @@ fi
 
 AWS_PROFILE=$1
 
-aws ec2 describe-subnets | jq -r '.Subnets[] | .VpcId + " " + (.Tags[] | select( .Key == "Name" ) | .Value ) + ": " + .SubnetId + " " + .CidrBlock' | sort | awk -F': ' '{print $2 ": " $1}'
+aws ec2 describe-subnets --profile $AWS_PROFILE | jq -r '.Subnets[] | .VpcId + " " + (.Tags[] | select( .Key == "Name" ) | .Value ) + ": " + .SubnetId + " " + .CidrBlock' | sort | awk -F': ' '{print $2 ": " $1}'
