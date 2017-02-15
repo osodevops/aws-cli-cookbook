@@ -20,7 +20,7 @@ export AWS_PROFILE=$1
 
 echo "Here is list of IAM users with MFA devices"
 
-for user in $(aws iam list-users | jq -r '.Users[] | .UserName');
+for user in $(aws iam list-users --profile $AWS_PROFILE | jq -r '.Users[] | .UserName');
 do
-    aws iam list-mfa-devices --user-name "${user}" | jq -r "\"$user: \" + (.MFADevices | length | tostring)"
+    aws iam list-mfa-devices --profile $AWS_PROFILE --user-name "${user}" | jq -r "\"$user: \" + (.MFADevices | length | tostring)"
 done

@@ -20,7 +20,7 @@ AWS_PROFILE=$1
 
 echo "Here is a list of IAM users on the account:"
 
-for user in $(aws iam list-users | jq -r '.Users[] | .UserName') ;
+for user in $(aws iam list-users --profile $AWS_PROFILE | jq -r '.Users[] | .UserName') ;
 do
-    aws iam list-access-keys --user-name "${user}"
+    aws iam list-access-keys --profile $AWS_PROFILE --user-name "${user}"
 done

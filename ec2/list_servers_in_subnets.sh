@@ -18,4 +18,4 @@ fi
 
 AWS_PROFILE=$1
 
-aws ec2 describe-instances | jq -r '.Reservations[] | .Instances[] | select( .State | .Name == "running") | .SubnetId + ": " + (.Tags[] | select(.Key == "Name") | .Value) + " " + .PrivateIpAddress' | sort | awk -F': ' '{print $2 ": " $1}'
+aws ec2 describe-instances --profile $AWS_PROFILE | jq -r '.Reservations[] | .Instances[] | select( .State | .Name == "running") | .SubnetId + ": " + (.Tags[] | select(.Key == "Name") | .Value) + " " + .PrivateIpAddress' | sort | awk -F': ' '{print $2 ": " $1}'

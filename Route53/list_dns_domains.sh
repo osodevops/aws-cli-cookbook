@@ -18,4 +18,4 @@ fi
 
 AWS_PROFILE=$1
 
-aws route53 list-hosted-zones | jq -r '.HostedZones[] | .Name + ": " + .Id'
+aws route53 list-hosted-zones --profile $AWS_PROFILE | jq -r '.HostedZones[] | .Name + ": " + .Id'

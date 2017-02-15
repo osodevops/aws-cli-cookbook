@@ -20,7 +20,13 @@ Homebrew on Mac OSX
 
 `$ brew install awscli`
 
-Once you have installed the AWS CLI make sure to configure it before you get started.
+jq used in the parsing of the responses of the awscli, can be installed by:
+
+`brew install jq`
+
+https://stedolan.github.io/jq/download/
+
+Once you have installed the AWS CLI and jq make sure to configure it before you get started.
 
 Simply type `$ aws configure` and fill in the prompts and you are good to go! 
 
