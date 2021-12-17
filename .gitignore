@@ -3,3 +3,17 @@
 *.iml
 out
 gen
+# Compiled files
+*.tfstate
+*.tfstate.backup
+
+# Module directory
+.terraform
+.idea
+*.iml
+
+.build-harness
+build-harness
+
+test.log
+.DS_Store
